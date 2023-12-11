@@ -1,0 +1,57 @@
+h1 {
+    color: blue;
+    text-align: center;
+    text-decoration: underline;
+}
+body {
+    /* background-color: darkcyan; */
+    background-image: url(fullwidth.jpg);
+    background-attachment: fixed;
+}
+input {
+    padding: 25px;
+    border-radius: 100px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 10px;
+    font-style: italic;
+    text-decoration:line-through;
+    letter-spacing: 2px;
+    word-spacing: 2.5px;
+    line-height: 5px;
+    
+}
+select {
+    padding: 10px;
+    font-style: italic;
+    border-radius: 100px;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+button {
+    padding: 15px;
+    border-radius: 100px;
+    color: white;
+    background-color: black;
+    position: relative;
+    margin-left: 100px;
+}
+form {
+    border: 1x;
+    background-color: aqua;
+    padding: 25px;
+    border-radius: 50px;
+    width: 500px;
+    outline-style:dotted ;
+    outline-color: black;
+    outline-width: 15px;
+    border-color: blue;
+    left: 475px;
+    position: relative;
+    top: 100px;
+}
+video {
+    margin: 100px;
+    border: 2px;
+    border-radius: 50px;
+}

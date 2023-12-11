@@ -1,0 +1,513 @@
+
+body
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  background-color: white;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.15;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "logo register" "hosting activities";
+  align-items: center;
+  justify-items: center;
+}
+
+section {
+  scroll-margin-top: 1em;
+}
+
+main {
+  max-width: 1400px;
+  width: 100%;
+  display: grid;
+  gap: 3rem;
+}
+
+h1 {
+  margin: 2rem 0rem;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+/* GENERAL COMPONENTS */
+
+.component {
+  display: flex;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.component:hover {
+  transform: scale(1.03);
+}
+
+/* SPECIFIC ITEMS */
+
+.reserviaLogo {
+  padding: 0 2rem;
+  grid-area: logo;
+  height: 6rem;
+}
+
+
+.hostingButton:hover,
+.activitiesButton:hover {
+  border-bottom: 3px solid #0065fc;
+  color: #0065fc;
+}
+
+.hostingButton {
+  grid-area: hosting;
+}
+
+.activitiesButton {
+  grid-area: activities;
+}
+
+.registerButton {
+  width: 100%;
+  padding: 2em;
+  border-bottom: none;
+  font-weight: 700;
+  color: #0065fc;
+  text-align: center;
+  grid-area: register;
+}
+
+#search {
+  padding: 0 3rem;
+}
+
+.searchForm {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.locationIcon {
+  background: #f2f2f2;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 2rem 0 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchInput {
+  font-size: 1.5rem;
+  font-weight: 700;
+  max-width: 22rem;
+  height: 5rem;
+  padding: 0 2rem;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: none;
+  border-right: none;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchButton {
+  cursor: pointer;
+  font-size: 1.5rem;
+  background: #0065fc;
+  color: white;
+  font-weight: 700;
+  height: 5rem;
+  min-width: 5rem;
+  padding: 0 1.5rem;
+  border-radius: 1.5rem;
+  margin-left: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchText {
+  display: none;
+}
+
+.searchIcon {
+  display: flex;
+}
+
+#filters {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.searchFiltersTitle {
+  margin: 0 1.5rem 1.5rem 0;
+}
+
+.searchFiltersWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.searchFilter {
+  border: 2px solid #f2f2f2;
+  font-weight: 700;
+  border-radius: 50px;
+  min-height: 5rem;
+  margin: 0 1.5rem 1.5rem 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.searchFilter:hover {
+  color: #0065fc;
+  transform: translateY(-3px);
+}
+
+.filterIcon {
+  background: #deebff;
+  border: 2px solid #deebff;
+  color: #0065fc;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin: -2px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.filterText {
+  margin: 0 2rem;
+  font-weight: 700;
+}
+
+.searchInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchInfoIcon {
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  border: 2px solid #f2f2f2;
+  color: #0065fc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hosting {
+  display: grid;
+  gap: 3rem;
+  grid-template-areas: "hosting" " popular";
+}
+
+.hostingWrapper {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.popularWrapper {
+  grid-area: popular;
+  border-radius: 0;
+  background: #f2f2f2;
+}
+
+.popularGrid {
+  display: grid;
+  grid-auto-rows: 16rem;
+  gap: 2rem;
+}
+
+.componentHeader {
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popularIcon {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.popularComponentImage {
+  width: 33%;
+  object-fit: cover;
+  border-radius: 1.5rem 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.componentInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.componentTitle {
+  width: 100%;
+  font-weight: 700;
+  margin: 0.5rem 0rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+}
+
+.componentText {
+  margin-bottom: 0.5rem;
+}
+
+.ratingComponent {
+  margin-top: auto;
+  color: #0065fc;
+  display: flex;
+  align-items: center;
+}
+
+.ratingIconGrey {
+  color: #c4c3c3;
+}
+
+.cityHostingWrapper {
+  background: none;
+}
+
+.hostingGrid {
+  display: grid;
+  grid-auto-rows: 20rem;
+  gap: 2rem;
+}
+
+.hostingComponent {
+  /* height: 20rem; */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hostingComponentImage {
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.displayMore {
+  font-weight: 700;
+  margin-top: 3rem;
+}
+
+#activities {
+  padding: 0 3rem;
+}
+
+.activitiesWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.activitiesGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.activitiesComponent {
+  min-height: 20rem;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activitiesComponentImage {
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.activitiesInfo {
+  padding: 2rem;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 3rem;
+  background: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTitle {
+  font-weight: 700;
+  margin: 2rem 0rem;
+}
+
+.footerLink {
+  margin: 1rem 0rem;
+}
+
+@media only screen and (min-width: 630px) {
+  header {
+    grid-template-columns: auto 1fr auto auto auto;
+    grid-template-areas: "logo . hosting activities register";
+    align-items: center;
+  }
+
+  .navigationButton {
+    border-top: 3px transparent solid;
+    border-bottom: none;
+  }
+
+  .navigationButton:hover {
+    border-top: 3px solid #0065fc;
+    border-bottom: none;
+  }
+
+  .searchInput {
+    flex: none;
+  }
+
+  .searchText {
+    display: flex;
+  }
+
+  .searchIcon {
+    display: none;
+  }
+
+  .searchButton {
+    border-radius: 0 2rem 2rem 0;
+  }
+
+  #hosting,
+  #activities {
+    padding: 0 3rem;
+  }
+
+  .hostingWrapper {
+    background: #f2f2f2;
+    border-radius: 20px;
+  }
+
+  .popularGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hostingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .activitiesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #hosting {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 3rem;
+    grid-template-areas: "hosting popular";
+  }
+
+  .popularGrid {
+    grid-template-rows: repeat(3, 16rem);
+    grid-template-columns: auto;
+  }
+
+  .hostingGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+  }
+
+  .activitiesGrid {
+    grid-template-rows: 20rem 2rem 2rem 2rem 20rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .activityOne {
+    grid-row: 1/6;
+  }
+
+  .activityTwo {
+    grid-row: 1/4;
+  }
+
+  .activityThree {
+    grid-row: 4/6;
+  }
+
+  .activityFour {
+    grid-row: 1/6;
+  }
+
+  .activityFive {
+    grid-row: 1/3;
+  }
+
+  .activitySix {
+    grid-row: 3/6;
+  }
+
+  .activitiesComponentImage {
+    flex: 1;
+  }
+}

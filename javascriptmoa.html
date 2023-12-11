@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Members Only Area</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 36px;
+      text-decoration: none;
+    }
+    .sidebar a.active {
+      background-color: gray;
+      color: white;
+    }
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    #loginForm {
+      max-width: 300px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #loginForm input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    #loginForm button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    #loginForm button:hover {
+      background-color: #45a049;
+    }
+    #content {
+      display: none;
+      margin-top: 20px;
+    }
+    #content p {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #logoutBtn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 3px;
+      background-color: #f44336;
+      color: white;
+      cursor: pointer;
+    }
+    #logoutBtn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar"></div>
+
+  <h1>Welcome to the Members Only Area</h1>
+  <div id="loginForm"></div>
+
+  <div id="content" style="display: none;">
+    <p>This is exclusive content for members.</p>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script src="javascriptformoa.js">  
+  </script>
+</body>
+</html>
